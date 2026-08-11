@@ -1,0 +1,866 @@
+
+:root {
+  --ink: #102a2d;
+  --muted: #607276;
+  --paper: #f4f5f1;
+  --card: #ffffff;
+  --line: #dce3df;
+  --brand: #0e5354;
+  --brand-dark: #0b3b3c;
+  --sand: #d8b777;
+  --d1: #b2675e;
+  --d2: #2e7d64;
+  --d3: #668f80;
+  --d4: #2d6782;
+  --d5: #7a6d99;
+  --shadow: 0 18px 45px rgba(20, 40, 42, .13);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.hero {
+  min-height: 540px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(5,21,24,.88), rgba(8,30,34,.55) 50%, rgba(8,30,34,.12)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Ushuaia%20-%20Argentina.jpg") center 45%/cover;
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(7,25,28,.74), transparent 58%);
+}
+.hero__content {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 90px 0 68px;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.eyebrow, .section-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+.hero h1 {
+  margin: 12px 0 18px;
+  max-width: 900px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(50px, 7vw, 92px);
+  line-height: .92;
+  font-weight: 500;
+}
+.hero h1 span {
+  font-size: .45em;
+  font-style: italic;
+  color: #dfe9e8;
+}
+.hero p {
+  max-width: 710px;
+  margin: 0;
+  line-height: 1.7;
+  color: #e7efee;
+  font-size: 17px;
+}
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+.hero__meta span {
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  background: rgba(255,255,255,.09);
+  backdrop-filter: blur(6px);
+  font-size: 13px;
+}
+
+main { padding-bottom: 0; }
+.intro, .timeline-header, .travel-note {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.intro {
+  padding: 70px 0 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+}
+.section-kicker { color: var(--brand); }
+.intro h2, .timeline-header h2, .travel-note h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(34px, 4vw, 55px);
+  margin: 8px 0 12px;
+}
+.intro p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 690px;
+  margin: 0;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  justify-content: flex-end;
+  color: var(--muted);
+  font-size: 12px;
+}
+.legend span { display: flex; align-items: center; gap: 6px; }
+.legend-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  display: inline-block;
+}
+.legend-dot.day1 { background: var(--d1); }
+.legend-dot.day2 { background: var(--d2); }
+.legend-dot.day3 { background: var(--d3); }
+.legend-dot.day4 { background: var(--d4); }
+.legend-dot.day5 { background: var(--d5); }
+
+.map-shell {
+  width: min(1320px, calc(100% - 28px));
+  margin: 0 auto 80px;
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  background: var(--card);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.days-panel {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background: #f7f8f5;
+  border-right: 1px solid var(--line);
+}
+.day-tab {
+  appearance: none;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  border-radius: 14px;
+  padding: 15px 15px 14px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: .2s ease;
+  border-left: 4px solid transparent;
+}
+.day-tab:hover { background: white; transform: translateX(2px); }
+.day-tab.active {
+  background: white;
+  box-shadow: 0 8px 24px rgba(31,58,60,.09);
+  border-left-color: var(--brand);
+}
+.day-tab small {
+  display: block;
+  color: var(--brand);
+  font-weight: 850;
+  letter-spacing: .13em;
+  margin-bottom: 5px;
+}
+.day-tab strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.15;
+  margin-bottom: 5px;
+}
+.day-tab span { color: var(--muted); font-size: 11px; }
+
+.map-wrap { position: relative; min-width: 0; }
+#map { width: 100%; height: 100%; min-height: 690px; background: #d7e5e0; }
+.map-note {
+  position: absolute;
+  z-index: 500;
+  left: 18px;
+  bottom: 18px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-radius: 13px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.1);
+  max-width: 280px;
+  padding: 10px 12px;
+}
+.map-note strong, .map-note span { display: block; }
+.map-note strong { color: var(--brand); font-size: 11px; letter-spacing: .08em; }
+.map-note span { color: var(--muted); font-size: 11px; margin-top: 3px; line-height: 1.35; }
+
+.photo-marker {
+  width: 54px;
+  height: 54px;
+  border: 3px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0,0,0,.28);
+  transition: .2s;
+  position: relative;
+}
+.photo-marker:hover { transform: scale(1.12); z-index: 20 !important; }
+.photo-marker img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.photo-marker::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+}
+.marker-label {
+  position: absolute;
+  left: 50%; top: calc(100% + 5px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: var(--ink);
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(17,42,45,.1);
+  border-radius: 7px;
+  padding: 3px 6px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.1);
+  font-size: 9px;
+  font-weight: 750;
+}
+.day-ring-1 { box-shadow: 0 0 0 3px var(--d1), 0 5px 18px rgba(0,0,0,.28); }
+.day-ring-2 { box-shadow: 0 0 0 3px var(--d2), 0 5px 18px rgba(0,0,0,.28); }
+.day-ring-3 { box-shadow: 0 0 0 3px var(--d3), 0 5px 18px rgba(0,0,0,.28); }
+.day-ring-4 { box-shadow: 0 0 0 3px var(--d4), 0 5px 18px rgba(0,0,0,.28); }
+.day-ring-5 { box-shadow: 0 0 0 3px var(--d5), 0 5px 18px rgba(0,0,0,.28); }
+
+.leaflet-popup-content-wrapper {
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 16px 50px rgba(0,0,0,.2);
+}
+.leaflet-popup-content { margin: 0; width: 265px !important; }
+.poi-popup img { width: 100%; height: 130px; object-fit: cover; display: block; background:#dfe7e3; }
+.poi-popup__body { padding: 12px 14px 14px; }
+.poi-popup__meta {
+  font-size: 10px; font-weight: 850; letter-spacing: .1em; color: var(--brand); margin-bottom: 5px;
+}
+.poi-popup h3 { margin: 0 0 6px; font-family: Georgia, serif; font-size: 20px; }
+.poi-popup p { margin: 0; color: var(--muted); line-height: 1.45; font-size: 12px; }
+
+.timeline-section { padding: 0 0 80px; }
+.timeline-header { padding-bottom: 24px; }
+.day-cards {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+.day-card {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(20,40,42,.08);
+}
+.day-card__photo {
+  min-height: 320px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.day-card__photo::after {
+  content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(4,24,27,.45), transparent 60%);
+}
+.day-card__stamp {
+  position:absolute; left:18px; bottom:18px; z-index:2;
+  color:white;
+}
+.day-card__stamp small { display:block; font-weight:800; letter-spacing:.13em; }
+.day-card__stamp strong { font-family: Georgia, serif; font-size: 34px; font-weight:500; }
+.day-card__body { padding: 28px 32px; }
+.day-card__body h3 {
+  margin:0 0 7px; font-family:Georgia,serif; font-size:30px; font-weight:500;
+}
+.day-card__body > p { margin:0 0 20px; color:var(--muted); line-height:1.6; }
+.schedule { display:grid; gap:8px; }
+.schedule-row {
+  display:grid; grid-template-columns:80px 1fr; gap:14px;
+  padding:10px 0; border-top:1px solid var(--line);
+}
+.schedule-row time { font-weight:850; color:var(--brand); font-size:12px; }
+.schedule-row div strong { display:block; font-size:13px; }
+.schedule-row div span { display:block; color:var(--muted); font-size:12px; line-height:1.45; margin-top:2px; }
+
+.travel-note {
+  margin-bottom: 80px;
+  padding: 34px;
+  background: var(--brand);
+  color: white;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+.travel-note .section-kicker { color: #b9d9d7; }
+.travel-note h2 { margin-bottom: 0; }
+.travel-note p { margin:0; line-height:1.8; color:#e3eeee; }
+
+footer {
+  background: #092f31;
+  color: white;
+  padding: 35px max(20px, calc((100vw - 1180px)/2));
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  gap:12px 22px;
+}
+footer strong { font-family:Georgia,serif; font-size:19px; }
+footer span { color:#c6d7d7; }
+footer small { color:#86a6a6; margin-left:auto; }
+
+@media (max-width: 900px) {
+  .hero { min-height: 500px; }
+  .intro { display:block; }
+  .legend { justify-content:flex-start; margin-top:18px; }
+  .map-shell { display:block; }
+  .days-panel {
+    flex-direction: row;
+    overflow-x:auto;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .day-tab { min-width:230px; }
+  #map { min-height: 600px; }
+  .day-card { grid-template-columns: 1fr; }
+  .day-card__photo { min-height: 230px; }
+  .travel-note { grid-template-columns:1fr; }
+  footer small { width:100%; margin-left:0; }
+}
+@media (max-width: 580px) {
+  .hero__content { width: calc(100% - 28px); padding-bottom:42px; }
+  .hero h1 { font-size:49px; }
+  .intro, .timeline-header, .day-cards, .travel-note { width: calc(100% - 24px); }
+  .map-shell { width:100%; border-radius:0; }
+  #map { min-height:560px; }
+  .photo-marker { width:48px; height:48px; }
+  .marker-label { display:none; }
+  .day-card__body { padding:22px 20px; }
+  .schedule-row { grid-template-columns:68px 1fr; gap:8px; }
+}
+
+
+/* =========================================================
+   LEAFLET - REGLAS CRÍTICAS DE RESPALDO
+   Evitan el efecto de "mosaicos separados" si el navegador
+   tarda en aplicar la hoja de estilos externa de Leaflet.
+   ========================================================= */
+.leaflet-container {
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.leaflet-container {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.leaflet-tile {
+  width: 256px;
+  height: 256px;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.leaflet-tile-container img {
+  width: 256px !important;
+  height: 256px !important;
+  max-width: none !important;
+  display: block !important;
+}
+.leaflet-zoom-animated {
+  transform-origin: 0 0;
+}
+.leaflet-control {
+  position: relative;
+  z-index: 800;
+  pointer-events: auto;
+}
+.leaflet-top,
+.leaflet-bottom {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
+.leaflet-top { top: 0; }
+.leaflet-right { right: 0; }
+.leaflet-bottom { bottom: 0; }
+.leaflet-left { left: 0; }
+.leaflet-control-zoom {
+  margin: 12px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE V3
+   Optimizado para desktop, notebook, tablet y móvil.
+   Breakpoints principales: 1180 / 900 / 700 / 580 / 420 px
+   ========================================================= */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hero__content,
+.intro,
+.timeline-header,
+.day-cards,
+.travel-note {
+  min-width: 0;
+}
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+  .map-shell {
+    max-width: 1380px;
+    grid-template-columns: 350px minmax(0, 1fr);
+  }
+
+  #map {
+    min-height: 720px;
+  }
+}
+
+/* Notebooks y tablets horizontales */
+@media (max-width: 1180px) {
+  .map-shell {
+    width: calc(100% - 24px);
+    grid-template-columns: 285px minmax(0, 1fr);
+  }
+
+  .days-panel {
+    padding: 12px;
+  }
+
+  .day-tab {
+    padding: 13px 12px;
+  }
+
+  .day-tab strong {
+    font-size: 15px;
+  }
+
+  .marker-label {
+    font-size: 8px;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 470px;
+  }
+
+  .hero__content {
+    padding-top: 70px;
+  }
+
+  .intro {
+    padding-top: 48px;
+  }
+
+  .map-shell {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 24px);
+    min-height: 0;
+  }
+
+  .days-panel {
+    order: 1;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 8px;
+    padding: 10px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .day-tab {
+    flex: 0 0 215px;
+    min-width: 215px;
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+  }
+
+  .day-tab.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--brand);
+  }
+
+  .map-wrap {
+    order: 2;
+  }
+
+  #map {
+    min-height: 580px;
+    height: 64vh;
+    max-height: 720px;
+  }
+
+  .map-note {
+    max-width: 240px;
+  }
+
+  .day-card {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+
+  .day-card__body {
+    padding: 24px;
+  }
+
+  .day-card__body h3 {
+    font-size: 27px;
+  }
+}
+
+/* Tablets verticales y móviles grandes */
+@media (max-width: 700px) {
+  .hero {
+    min-height: 440px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 12vw, 62px);
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero__meta {
+    gap: 7px;
+  }
+
+  .hero__meta span {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  .intro h2,
+  .timeline-header h2,
+  .travel-note h2 {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+
+  #map {
+    min-height: 520px;
+    height: 60vh;
+  }
+
+  .photo-marker {
+    width: 46px;
+    height: 46px;
+    border-width: 2px;
+  }
+
+  .marker-label {
+    display: none;
+  }
+
+  .leaflet-popup-content {
+    width: min(245px, calc(100vw - 58px)) !important;
+  }
+
+  .poi-popup img {
+    height: 115px;
+  }
+
+  .day-card {
+    grid-template-columns: 1fr;
+  }
+
+  .day-card__photo {
+    min-height: 220px;
+    aspect-ratio: 16 / 8;
+  }
+
+  .travel-note {
+    padding: 26px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Móviles */
+@media (max-width: 580px) {
+  .hero {
+    min-height: 420px;
+  }
+
+  .hero__content {
+    width: calc(100% - 28px);
+    padding: 58px 0 38px;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    font-size: 10px;
+    letter-spacing: .14em;
+  }
+
+  .hero h1 {
+    margin-top: 10px;
+    font-size: clamp(42px, 13vw, 55px);
+  }
+
+  .hero h1 span {
+    display: block;
+    margin-top: 8px;
+    font-size: .42em;
+    line-height: 1.1;
+  }
+
+  .hero p {
+    line-height: 1.55;
+  }
+
+  .intro,
+  .timeline-header,
+  .day-cards,
+  .travel-note {
+    width: calc(100% - 24px);
+  }
+
+  .intro {
+    padding-top: 40px;
+  }
+
+  .legend {
+    gap: 9px;
+  }
+
+  .map-shell {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 58px;
+  }
+
+  .days-panel {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .day-tab {
+    flex-basis: 190px;
+    min-width: 190px;
+    padding: 11px 10px;
+  }
+
+  .day-tab strong {
+    font-size: 14px;
+  }
+
+  .day-tab span {
+    font-size: 10px;
+  }
+
+  #map {
+    min-height: 480px;
+    height: 58vh;
+    max-height: 620px;
+  }
+
+  .map-note {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    max-width: none;
+  }
+
+  .map-note span {
+    font-size: 10px;
+  }
+
+  .photo-marker {
+    width: 42px;
+    height: 42px;
+  }
+
+  .day-card__body {
+    padding: 20px 18px;
+  }
+
+  .day-card__body h3 {
+    font-size: 25px;
+  }
+
+  .schedule-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .schedule-row time,
+  .schedule-row div strong,
+  .schedule-row div span {
+    overflow-wrap: anywhere;
+  }
+
+  .travel-note {
+    margin-bottom: 56px;
+    padding: 22px 20px;
+  }
+
+  footer {
+    padding: 28px 18px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 420px) {
+  .hero {
+    min-height: 390px;
+  }
+
+  .hero__content {
+    width: calc(100% - 22px);
+    padding-top: 48px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero__meta span {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .intro,
+  .timeline-header,
+  .day-cards,
+  .travel-note {
+    width: calc(100% - 18px);
+  }
+
+  .intro h2,
+  .timeline-header h2,
+  .travel-note h2 {
+    font-size: 31px;
+  }
+
+  .day-tab {
+    flex-basis: 172px;
+    min-width: 172px;
+  }
+
+  #map {
+    min-height: 430px;
+    height: 56vh;
+  }
+
+  .photo-marker {
+    width: 38px;
+    height: 38px;
+  }
+
+  .leaflet-control-zoom {
+    transform: scale(.92);
+    transform-origin: top left;
+  }
+
+  .poi-popup__body {
+    padding: 10px 11px 12px;
+  }
+
+  .poi-popup h3 {
+    font-size: 18px;
+  }
+
+  .schedule-row {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .schedule-row time {
+    font-size: 11px;
+  }
+}
+
+/* Orientación horizontal en teléfonos */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 340px;
+  }
+
+  #map {
+    height: 78vh;
+    min-height: 360px;
+  }
+
+  .map-note {
+    display: none;
+  }
+}
+
+/* Pantallas táctiles: objetivos más cómodos */
+@media (hover: none) and (pointer: coarse) {
+  .day-tab {
+    min-height: 82px;
+  }
+
+  .day-tab:hover,
+  .photo-marker:hover {
+    transform: none;
+  }
+
+  .leaflet-control-zoom a {
+    width: 34px !important;
+    height: 34px !important;
+    line-height: 34px !important;
+  }
+}

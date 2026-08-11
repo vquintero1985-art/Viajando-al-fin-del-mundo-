@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Circuito turístico de 5 días por Ushuaia: Parque Nacional, Laguna Esmeralda, Canal Beagle, Faro Les Éclaireurs y Glaciar Martial." />
+  <title>Ushuaia · Fin del Mundo | Circuito 5 días</title>
+
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="eyebrow">USHUAIA · TIERRA DEL FUEGO · ARGENTINA</span>
+      <h1>Fin del Mundo<br><span>5 días de naturaleza y aventura</span></h1>
+      <p>
+        Un circuito visual e interactivo por los paisajes más emblemáticos de Ushuaia,
+        con recorridos organizados por jornada, horarios y puntos de interés.
+      </p>
+      <div class="hero__meta">
+        <span>📅 5 días / 4 noches</span>
+        <span>📍 Ushuaia, Argentina</span>
+        <span>✈️ Regreso: 10 febrero 2027</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <span class="section-kicker">ITINERARIO INTERACTIVO</span>
+        <h2>Explorá el circuito día por día</h2>
+        <p>
+          Seleccioná una jornada para ver únicamente su recorrido. Cada miniatura sobre el mapa
+          corresponde a una parada real del itinerario; hacé clic para abrir su ficha.
+        </p>
+      </div>
+      <div class="legend">
+        <span><i class="legend-dot day1"></i>Día 1</span>
+        <span><i class="legend-dot day2"></i>Día 2</span>
+        <span><i class="legend-dot day3"></i>Día 3</span>
+        <span><i class="legend-dot day4"></i>Día 4</span>
+        <span><i class="legend-dot day5"></i>Día 5</span>
+      </div>
+    </section>
+
+    <section class="map-shell">
+      <aside class="days-panel">
+        <button class="day-tab active" data-day="all">
+          <small>VISTA GENERAL</small>
+          <strong>Todo el circuito</strong>
+          <span>5 días · Ushuaia</span>
+        </button>
+        <button class="day-tab" data-day="1">
+          <small>DÍA 1</small>
+          <strong>Bienvenidos al Fin del Mundo</strong>
+          <span>Recepción · Centro · Costanera</span>
+        </button>
+        <button class="day-tab" data-day="2">
+          <small>DÍA 2</small>
+          <strong>Donde termina la ruta</strong>
+          <span>Tren · Parque Nacional · Lapataia</span>
+        </button>
+        <button class="day-tab" data-day="3">
+          <small>DÍA 3</small>
+          <strong>El espejo verde de la montaña</strong>
+          <span>Trekking Laguna Esmeralda</span>
+        </button>
+        <button class="day-tab" data-day="4">
+          <small>DÍA 4</small>
+          <strong>Navegando hacia el Fin del Mundo</strong>
+          <span>Canal Beagle · Faro · Fauna</span>
+        </button>
+        <button class="day-tab" data-day="5">
+          <small>DÍA 5</small>
+          <strong>Entre el bosque y el hielo</strong>
+          <span>Glaciar Martial · Miradores</span>
+        </button>
+      </aside>
+
+      <div class="map-wrap">
+        <div id="map"></div>
+        <div class="map-note">
+          <strong>Tip</strong>
+          <span>Usá la rueda del mouse para acercar y arrastrá para recorrer el mapa.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <div class="timeline-header">
+        <span class="section-kicker">PROGRAMA COMPLETO</span>
+        <h2>Detalle de las jornadas</h2>
+      </div>
+      <div id="dayCards" class="day-cards"></div>
+    </section>
+
+    <section class="travel-note">
+      <div>
+        <span class="section-kicker">INFORMACIÓN IMPORTANTE</span>
+        <h2>Un circuito pensado con ritmo realista</h2>
+      </div>
+      <p>
+        El programa alterna naturaleza, navegación, trekking y tiempo libre. Los horarios son
+        estimados y pueden ajustarse según vuelos, clima, estado de senderos, operación de
+        prestadores y condiciones de navegación.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>USHUAIA · FIN DEL MUNDO</strong>
+    <span>Circuito turístico · Febrero 2027</span>
+    <small>Mapa © OpenStreetMap contributors · Sitio preparado para GitHub Pages.</small>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
