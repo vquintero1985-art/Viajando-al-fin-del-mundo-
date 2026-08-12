@@ -90,3 +90,12 @@ itinerario pasan a una sola columna.
 
 Leaflet también recalcula su tamaño al rotar el dispositivo o cambiar el ancho
 de la ventana.
+
+
+## Versión final con fotos locales
+
+Esta versión usa fotografías locales dentro de `assets/markers/` para los puntos de interés
+principales de los cinco días. Los pines y las fichas ya no dependen de Wikimedia para esas
+imágenes, lo que evita marcadores rotos al publicar en GitHub Pages.
+
+Se mantiene el diseño responsive V3 para celular, tablet, notebook y escritorio.

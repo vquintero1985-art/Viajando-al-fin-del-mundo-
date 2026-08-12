@@ -33,7 +33,7 @@ body {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(5,21,24,.88), rgba(8,30,34,.55) 50%, rgba(8,30,34,.12)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Ushuaia%20-%20Argentina.jpg") center 45%/cover;
+    url("assets/markers/puerto.jpg") center 45%/cover;
 }
 .hero__overlay {
   position: absolute; inset: 0;

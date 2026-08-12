@@ -10,7 +10,7 @@ const dayColors = {
 const commons = (filename) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}`;
 
-const fallback = commons("Ushuaia - Argentina.jpg");
+const fallback = "assets/markers/centro.jpg";
 
 /*
   Coordenadas geográficas aproximadas de referencia.
@@ -19,33 +19,29 @@ const fallback = commons("Ushuaia - Argentina.jpg");
 */
 
 const localFallbackPhotos = {
-  "Aeropuerto Malvinas Argentinas": "assets/markers/ushuaia.jpg",
-  "Centro de Ushuaia": "assets/markers/ushuaia.jpg",
-  "Costanera de Ushuaia": "assets/markers/ushuaia.jpg",
+  "Aeropuerto Malvinas Argentinas": "assets/markers/aeropuerto.jpg",
+  "Centro de Ushuaia": "assets/markers/centro.jpg",
+  "Costanera de Ushuaia": "assets/markers/costanera.jpg",
   "Puerto de Ushuaia": "assets/markers/puerto.jpg",
-  "Paseo de Artesanos": "assets/markers/ushuaia.jpg",
-
-  "Estación Fin del Mundo": "assets/markers/tren-fin-del-mundo.jpg",
-  "Estación Macarena": "assets/markers/tren-fin-del-mundo.jpg",
-  "Estación Parque Nacional": "assets/markers/tren-fin-del-mundo.jpg",
+  "Paseo de Artesanos": "assets/markers/centro.jpg",
+  "Estación Fin del Mundo": "assets/markers/estacion-fin-del-mundo.jpg",
+  "Estación Macarena": "assets/markers/estacion-macarena.jpg",
+  "Estación Parque Nacional": "assets/markers/estacion-parque-nacional.jpg",
   "Ensenada Zaratiegui": "assets/markers/ensenada-zaratiegui.jpg",
   "Lago Acigami": "assets/markers/lago-acigami.jpg",
-  "Bahía Lapataia": "assets/markers/bahia-lapataia.jpg",
-  "Mirador Lapataia": "assets/markers/bahia-lapataia.jpg",
-
-  "Inicio sendero Laguna Esmeralda": "assets/markers/laguna-esmeralda.jpg",
-  "Bosque y turberas": "assets/markers/laguna-esmeralda.jpg",
+  "Bahía Lapataia": "assets/markers/mirador-lapataia.jpg",
+  "Mirador Lapataia": "assets/markers/mirador-lapataia.jpg",
+  "Inicio sendero Laguna Esmeralda": "assets/markers/inicio-laguna-esmeralda.jpg",
+  "Bosque y turberas": "assets/markers/bosques-turberas.jpg",
   "Laguna Esmeralda": "assets/markers/laguna-esmeralda.jpg",
-
   "Puerto Turístico": "assets/markers/puerto.jpg",
   "Isla de los Pájaros": "assets/markers/isla-pajaros.jpg",
   "Isla de los Lobos": "assets/markers/isla-lobos.jpg",
   "Faro Les Éclaireurs": "assets/markers/faro-les-eclaireurs.jpg",
   "Isla Bridges": "assets/markers/isla-bridges.jpg",
-
-  "Base Cerro Martial": "assets/markers/glaciar-martial.jpg",
-  "Mirador del Glaciar Martial": "assets/markers/glaciar-martial.jpg",
-  "Mirador de Ushuaia": "assets/markers/ushuaia.jpg"
+  "Base Cerro Martial": "assets/markers/base-cerro-martial.jpg",
+  "Mirador del Glaciar Martial": "assets/markers/mirador-glaciar-martial.jpg",
+  "Mirador de Ushuaia": "assets/markers/mirador-ushuaia.jpg",
 };
 
 function localFallbackFor(name) {
@@ -58,7 +54,7 @@ const days = [
     title: "Bienvenidos al Fin del Mundo",
     subtitle: "Recepción y aclimatación",
     intro: "Una primera jornada tranquila para llegar, instalarse y tener el primer contacto con la costa del Canal Beagle.",
-    cover: commons("Ushuaia - Argentina.jpg"),
+    cover: "assets/markers/puerto.jpg",
     schedule: [
       ["Según vuelo", "Llegada a Ushuaia", "Recepción en el Aeropuerto Internacional Malvinas Argentinas y traslado privado."],
       ["Check-in", "Alojamiento", "Distribución de habitaciones y descanso."],
@@ -71,35 +67,35 @@ const days = [
         name: "Aeropuerto Malvinas Argentinas",
         time: "Llegada",
         coords: [-54.8433, -68.2958],
-        photo: commons("Ushuaia Airport.jpg"),
+        photo: "assets/markers/aeropuerto.jpg",
         desc: "Puerta de entrada aérea a Ushuaia, ubicada a pocos kilómetros del centro."
       },
       {
         name: "Centro de Ushuaia",
         time: "Check-in / tiempo libre",
         coords: [-54.8076, -68.3073],
-        photo: commons("Ushuaia city.jpg"),
+        photo: "assets/markers/centro.jpg",
         desc: "Área céntrica con hoteles, gastronomía, comercios y servicios."
       },
       {
         name: "Costanera de Ushuaia",
         time: "Tarde",
         coords: [-54.8107, -68.3044],
-        photo: commons("Ushuaia - Argentina.jpg"),
+        photo: "assets/markers/costanera.jpg",
         desc: "Paseo costero con vistas al Canal Beagle y a las montañas fueguinas."
       },
       {
         name: "Puerto de Ushuaia",
         time: "Tarde",
         coords: [-54.8090, -68.3015],
-        photo: commons("Port of Ushuaia.jpg"),
+        photo: "assets/markers/puerto.jpg",
         desc: "Puerto turístico y punto de salida de numerosas navegaciones por el Canal Beagle."
       },
       {
         name: "Paseo de Artesanos",
         time: "Tarde libre",
         coords: [-54.8085, -68.3036],
-        photo: commons("Ushuaia Argentina.jpg"),
+        photo: "assets/markers/centro.jpg",
         desc: "Sector céntrico ideal para una caminata breve, compras y contacto con productos locales."
       }
     ]
@@ -109,7 +105,7 @@ const days = [
     title: "Donde termina la ruta y comienza la aventura",
     subtitle: "Parque Nacional + Tren del Fin del Mundo",
     intro: "Bosques, lagos, costa, historia y el final de la Ruta Nacional 3 en una de las jornadas más completas del circuito.",
-    cover: commons("Tierra del Fuego National Park.jpg"),
+    cover: "assets/markers/mirador-lapataia.jpg",
     schedule: [
       ["08:00", "Desayuno", "Desayuno en el hotel."],
       ["08:45", "Salida desde Ushuaia", "Traslado en minibús hacia la Estación del Fin del Mundo."],
@@ -129,49 +125,49 @@ const days = [
         name: "Estación Fin del Mundo",
         time: "09:15",
         coords: [-54.8307, -68.4220],
-        photo: commons("End of the World Train.jpg"),
+        photo: "assets/markers/estacion-fin-del-mundo.jpg",
         desc: "Punto de partida del Ferrocarril Austral Fueguino, conocido como Tren del Fin del Mundo."
       },
       {
         name: "Estación Macarena",
         time: "Parada intermedia",
         coords: [-54.8390, -68.4680],
-        photo: commons("Tren del Fin del Mundo.jpg"),
+        photo: "assets/markers/estacion-macarena.jpg",
         desc: "Parada del recorrido ferroviario en un entorno de bosque y cursos de agua."
       },
       {
         name: "Estación Parque Nacional",
         time: "11:00 aprox.",
         coords: [-54.8437, -68.5220],
-        photo: commons("End of the World Train Ushuaia.jpg"),
+        photo: "assets/markers/estacion-parque-nacional.jpg",
         desc: "Llegada del tren dentro del área protegida y conexión con el recorrido terrestre."
       },
       {
         name: "Ensenada Zaratiegui",
         time: "11:45",
         coords: [-54.8509, -68.5329],
-        photo: commons("Ensenada Zaratiegui.jpg"),
+        photo: "assets/markers/ensenada-zaratiegui.jpg",
         desc: "Sector costero del Parque Nacional Tierra del Fuego sobre el Canal Beagle."
       },
       {
         name: "Lago Acigami",
         time: "13:30",
         coords: [-54.8412, -68.5793],
-        photo: commons("Lago Roca Tierra del Fuego.jpg"),
+        photo: "assets/markers/lago-acigami.jpg",
         desc: "Lago de origen glaciario rodeado por bosque andino-patagónico y montañas."
       },
       {
         name: "Bahía Lapataia",
         time: "14:30",
         coords: [-54.8526, -68.5770],
-        photo: commons("Lapataia Bay.jpg"),
+        photo: "assets/markers/mirador-lapataia.jpg",
         desc: "Uno de los paisajes más representativos del parque y final de la Ruta Nacional 3."
       },
       {
         name: "Mirador Lapataia",
         time: "15:00",
         coords: [-54.8509, -68.5727],
-        photo: commons("Bahia Lapataia Tierra del Fuego.jpg"),
+        photo: "assets/markers/mirador-lapataia.jpg",
         desc: "Sendero panorámico entre bosque y turbal con vistas abiertas a la bahía."
       }
     ]
@@ -181,7 +177,7 @@ const days = [
     title: "El espejo verde de la montaña",
     subtitle: "Trekking Laguna Esmeralda",
     intro: "La jornada de aventura moderada: bosque de lenga, turberas, montaña y una laguna glaciaria de intenso color.",
-    cover: commons("Laguna Esmeralda Ushuaia.jpg"),
+    cover: "assets/markers/laguna-esmeralda.jpg",
     schedule: [
       ["07:30", "Desayuno", "Desayuno en el hotel."],
       ["08:15", "Salida desde Ushuaia", "Traslado por Ruta Nacional 3 hacia el inicio del sendero."],
@@ -198,21 +194,21 @@ const days = [
         name: "Inicio sendero Laguna Esmeralda",
         time: "08:45",
         coords: [-54.7220, -68.1215],
-        photo: commons("Laguna Esmeralda Ushuaia.jpg"),
+        photo: "assets/markers/inicio-laguna-esmeralda.jpg",
         desc: "Acceso al trekking desde la Ruta Nacional 3, en el Valle de Tierra Mayor."
       },
       {
         name: "Bosque y turberas",
         time: "Durante el ascenso",
         coords: [-54.7030, -68.1170],
-        photo: commons("Tierra del Fuego forest.jpg"),
+        photo: "assets/markers/bosques-turberas.jpg",
         desc: "Tramo entre lengas, cursos de agua y turberas características del paisaje fueguino."
       },
       {
         name: "Laguna Esmeralda",
         time: "11:00",
         coords: [-54.6828, -68.1154],
-        photo: commons("Laguna Esmeralda, Ushuaia.jpg"),
+        photo: "assets/markers/laguna-esmeralda.jpg",
         desc: "Laguna de origen glaciario al pie del cordón montañoso, objetivo principal del trekking."
       }
     ]
@@ -222,7 +218,7 @@ const days = [
     title: "Navegando hacia el Fin del Mundo",
     subtitle: "Canal Beagle + Faro Les Éclaireurs",
     intro: "Una jornada marítima entre aves, lobos marinos, islas, historia y una de las postales más famosas de Ushuaia.",
-    cover: commons("Les Eclaireurs Lighthouse.jpg"),
+    cover: "assets/markers/faro-les-eclaireurs.jpg",
     schedule: [
       ["08:00", "Desayuno", "Desayuno en el hotel."],
       ["09:00", "Puerto turístico", "Traslado desde el alojamiento."],
@@ -241,35 +237,35 @@ const days = [
         name: "Puerto Turístico",
         time: "09:30",
         coords: [-54.8091, -68.3010],
-        photo: commons("Ushuaia port.jpg"),
+        photo: "assets/markers/puerto.jpg",
         desc: "Punto de embarque para la navegación por el Canal Beagle."
       },
       {
         name: "Isla de los Pájaros",
         time: "10:00",
         coords: [-54.8710, -68.2180],
-        photo: commons("Bird Island Beagle Channel.jpg"),
+        photo: "assets/markers/isla-pajaros.jpg",
         desc: "Sector de observación de aves marinas en el archipiélago Bridges."
       },
       {
         name: "Isla de los Lobos",
         time: "10:30",
         coords: [-54.8840, -68.1930],
-        photo: commons("Sea lions Beagle Channel.jpg"),
+        photo: "assets/markers/isla-lobos.jpg",
         desc: "Afloramientos rocosos utilizados por colonias de lobos marinos."
       },
       {
         name: "Faro Les Éclaireurs",
         time: "11:00",
         coords: [-54.8715, -68.0841],
-        photo: commons("Les Eclaireurs Lighthouse.jpg"),
+        photo: "assets/markers/faro-les-eclaireurs.jpg",
         desc: "Faro emblemático del Canal Beagle, conocido popularmente como el Faro del Fin del Mundo."
       },
       {
         name: "Isla Bridges",
         time: "11:30",
         coords: [-54.8505, -68.2570],
-        photo: commons("Beagle Channel Ushuaia.jpg"),
+        photo: "assets/markers/isla-bridges.jpg",
         desc: "Isla próxima a Ushuaia donde algunas navegaciones incluyen desembarco y caminata interpretativa."
       }
     ]
@@ -279,7 +275,7 @@ const days = [
     title: "Entre el bosque y el hielo",
     subtitle: "Glaciar Martial + mirador panorámico + regreso",
     intro: "Un cierre de montaña próximo a la ciudad, con vistas panorámicas y una exigencia menor que el trekking del día 3.",
-    cover: commons("Martial Glacier Ushuaia.jpg"),
+    cover: "assets/markers/mirador-glaciar-martial.jpg",
     schedule: [
       ["08:00", "Desayuno", "Desayuno en el hotel."],
       ["09:00", "Check-out", "Equipaje en guarda hasta el traslado final."],
@@ -297,28 +293,28 @@ const days = [
         name: "Base Cerro Martial",
         time: "09:30",
         coords: [-54.7851, -68.3622],
-        photo: commons("Martial Glacier Ushuaia.jpg"),
+        photo: "assets/markers/base-cerro-martial.jpg",
         desc: "Acceso de montaña próximo a la ciudad, punto de partida hacia los miradores del Martial."
       },
       {
         name: "Mirador del Glaciar Martial",
         time: "10:00",
         coords: [-54.7772, -68.3810],
-        photo: commons("Glaciar Martial Ushuaia.jpg"),
+        photo: "assets/markers/mirador-glaciar-martial.jpg",
         desc: "Sector panorámico con vistas al valle glacial, bosque y cumbres del Martial."
       },
       {
         name: "Mirador de Ushuaia",
         time: "14:00",
         coords: [-54.7934, -68.3442],
-        photo: commons("Ushuaia view.jpg"),
+        photo: "assets/markers/mirador-ushuaia.jpg",
         desc: "Punto elevado para cerrar el viaje con una vista general de la ciudad y el Canal Beagle."
       },
       {
         name: "Aeropuerto Malvinas Argentinas",
         time: "15:30 / 16:00",
         coords: [-54.8433, -68.2958],
-        photo: commons("Ushuaia Airport.jpg"),
+        photo: "assets/markers/aeropuerto.jpg",
         desc: "Traslado final para tomar el vuelo de regreso."
       }
     ]
