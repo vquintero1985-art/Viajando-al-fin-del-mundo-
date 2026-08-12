@@ -99,3 +99,11 @@ principales de los cinco días. Los pines y las fichas ya no dependen de Wikimed
 imágenes, lo que evita marcadores rotos al publicar en GitHub Pages.
 
 Se mantiene el diseño responsive V3 para celular, tablet, notebook y escritorio.
+
+
+## Versión autocontenida
+
+Esta versión incorpora las fotografías directamente dentro de `app.js` y `styles.css`
+como datos embebidos. Por eso no necesita la carpeta `assets` para mostrar las fotos
+de los pines. En GitHub Pages alcanza con subir `index.html`, `styles.css`, `app.js`
+y `README.md`.
